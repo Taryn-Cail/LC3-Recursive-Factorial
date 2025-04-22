@@ -23,10 +23,6 @@
 ;*******************************************
 
 FACTORIAL
-    ST R1, SAVER1        ; Save R1
-    ST R2, SAVER2        ; Save R2
-    ST R3, SAVER3        ; Save R3
-
     ADD R1, R0, #0       ; Copy R0 to R1
     BRp RECURSE          ; If R1 > 0, branch to RECURSE
     
@@ -121,13 +117,10 @@ YESPOP  LDR R0, R6, #0      ; Place the popped value into R0
         
         
 ; Variables for Subroutines
-SAVER1      .BLKW   #1
 STACKLIMIT  .FILL   x4000
 STACKBASE   .FILL   x5000
 NEGSL       .FILL   x-4000
 NEGSB       .FILL   x-5000
 RESULT      .BLKW   #1
-SAVER2      .BLKW   #1
-SAVER3      .BLKW   #1
 
-.END
+       .END
